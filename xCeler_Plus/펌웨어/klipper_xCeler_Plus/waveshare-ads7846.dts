@@ -1,0 +1,126 @@
+/dts-v1/;
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			ads7846_pins {
+				brcm,pins = <0xff>;
+				brcm,function = <0x00>;
+				brcm,pull = <0x00>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@4 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			#address-cells = <0x01>;
+			#size-cells = <0x00>;
+
+			ads7846@1 {
+				compatible = "ti,ads7846";
+				reg = <0x01>;
+				pinctrl-names = "default";
+				pinctrl-0 = <0x01>;
+				spi-max-frequency = <0x1e8480>;
+				interrupts = <0xff 0x02>;
+				interrupt-parent = <0xffffffff>;
+				pendown-gpio = <0xffffffff 0xff 0x01>;
+				ti,x-min = [00 00];
+				ti,y-min = [00 00];
+				ti,x-max = [0f ff];
+				ti,y-max = [0f ff];
+				ti,pressure-min = [00 00];
+				ti,pressure-max = [ff ff];
+				ti,x-plate-ohms = [01 90];
+				phandle = <0x02>;
+			};
+		};
+	};
+
+	__overrides__ {
+		cs = [00 00 00 02 72 65 67 3a 30 00];
+		speed = <0x02 0x7370692d 0x6d61782d 0x66726571 0x75656e63 0x793a3000>;
+		penirq = <0x01 0x6272636d 0x2c70696e 0x733a3000 0x02 0x696e7465 0x72727570 0x74733a30 0x00 0x270656e 0x646f776e 0x2d677069 0x6f3a3400>;
+		penirq_pull = <0x01 0x6272636d 0x2c70756c 0x6c3a3000>;
+		swapxy = <0x02 0x74692c73 0x7761702d 0x78793f00>;
+		xmin = [00 00 00 02 74 69 2c 78 2d 6d 69 6e 3b 30 00];
+		ymin = [00 00 00 02 74 69 2c 79 2d 6d 69 6e 3b 30 00];
+		xmax = [00 00 00 02 74 69 2c 78 2d 6d 61 78 3b 30 00];
+		ymax = [00 00 00 02 74 69 2c 79 2d 6d 61 78 3b 30 00];
+		pmin = [00 00 00 02 74 69 2c 70 72 65 73 73 75 72 65 2d 6d 69 6e 3b 30 00];
+		pmax = [00 00 00 02 74 69 2c 70 72 65 73 73 75 72 65 2d 6d 61 78 3b 30 00];
+		xohms = [00 00 00 02 74 69 2c 78 2d 70 6c 61 74 65 2d 6f 68 6d 73 3b 30 00];
+	};
+
+	__symbols__ {
+		ads7846_pins = "/fragment@3/__overlay__/ads7846_pins";
+		ads7846 = "/fragment@4/__overlay__/ads7846@1";
+	};
+
+	__fixups__ {
+		spi0 = "/fragment@0:target:0\0/fragment@4:target:0";
+		spidev0 = "/fragment@1:target:0";
+		spidev1 = "/fragment@2:target:0";
+		gpio = "/fragment@3:target:0\0/fragment@4/__overlay__/ads7846@1:interrupt-parent:0\0/fragment@4/__overlay__/ads7846@1:pendown-gpio:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@4 {
+
+			__overlay__ {
+
+				ads7846@1 {
+					pinctrl-0 = <0x00>;
+				};
+			};
+		};
+
+		__overrides__ {
+			cs = <0x00>;
+			speed = <0x00>;
+			penirq = <0x00 0x10 0x21>;
+			penirq_pull = <0x00>;
+			swapxy = <0x00>;
+			xmin = <0x00>;
+			ymin = <0x00>;
+			xmax = <0x00>;
+			ymax = <0x00>;
+			pmin = <0x00>;
+			pmax = <0x00>;
+			xohms = <0x00>;
+		};
+	};
+};

@@ -1,0 +1,20 @@
+*.so
+*.pyc
+.config
+.config.old
+klippy/.version
+# ===== out/ 디렉토리 관리 =====
+# out 전체는 무시
+out/*
+
+# 하지만 아래 파일들은 GitHub에 포함
+!out/autoconf.h
+!out/board
+!out/board-link
+!out/compile_time_request.c
+!out/compile_time_request.d
+!out/compile_time_request.o
+!out/compile_time_request.txt
+!out/klipper.bin
+!out/klipper.dict
+!out/klipper.elf

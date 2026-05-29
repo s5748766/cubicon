@@ -1,0 +1,39 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\f803-0124-0a_functionextension_20260112.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\f803-0124-0a_functionextension_20260112.dsn")
+      (Path "Design Resources" ".\f803-0124-0a_functionextension_20260112.dsn"
+         "SCHEMATIC1")
+      (Select "Design Resources"
+         ".\f803-0124-0a_functionextension_20260112.dsn" "SCHEMATIC1"
+         "01_FunctionExtension"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 444"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 104 1767 104 591")
+        (Scroll "-351 0")
+        (Zoom "79")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\CUBICON\DESKTOP\XCELER_PLUS\CD\F803-0124-0A_FUNCTIONEXTENSION_20260112.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "01_FunctionExtension"))))
